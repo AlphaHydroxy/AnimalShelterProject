@@ -1,0 +1,12 @@
+<h1>Animal Shelter</h1>
+
+<% for animal in @animals %>
+<p>Animal: <%= animal.name %></p>
+<p>Type: <%= animal.type %></p>
+<p>Breed: <%= animal.breed %></p>
+<p>Age: <%= animal.age %></p>
+<p>Date added: <%= animal.date_added %></p>
+<p>Adoptable: <%= animal.available %></p>
+
+<hr/>
+<% end %>

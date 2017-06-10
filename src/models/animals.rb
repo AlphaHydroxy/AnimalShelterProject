@@ -30,6 +30,11 @@ class Animal
     return Animal.new(animal.first)
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM animals;"
+    SqlRunner.run(sql)
+  end
+
   def find_available()
     sql = "SELECT * FROM animals WHERE animals.available = '#{@available}';"
     result = SqlRunner.run(sql)
