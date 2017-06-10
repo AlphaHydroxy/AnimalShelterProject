@@ -35,7 +35,17 @@ class Animal
     SqlRunner.run(sql)
   end
 
-  def find_available()
+  def delete()
+    sql = "DELETE FROM animals WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
+  def update()
+    sql = "UPDATE animals SET (name, type, breed, age, date_added, available) = ('#{@name}', '#{@type}', '#{@breed}', #{@age}, '#{@date_added}', '#{@available}') WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
+  def find_available_pets_for_adoption()
     sql = "SELECT * FROM animals WHERE animals.available = '#{@available}';"
     result = SqlRunner.run(sql)
     return result.first()

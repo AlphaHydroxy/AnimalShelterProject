@@ -25,6 +25,11 @@ class Adoption
     SqlRunner.run(sql)
   end
 
+  def delete()
+    sql = "DELETE FROM adoptions WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
   def show_owners_and_pets()
     sql = "SELECT owners.first_name, animals.name FROM adoptions INNER JOIN owners ON adoptions.owner_id= owners.id INNER JOIN animals ON adoptions.animal_id = animals.id;"
     SqlRunner.run(sql)

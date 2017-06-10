@@ -33,11 +33,22 @@ class Owner
     SqlRunner.run(sql)
   end
 
-  def find_owner()
-    sql = "SELECT * FROM animals WHERE animals.id = '#{@animal_id}';"
-    result = SqlRunner.run(sql)
-    return result.first()
+  def delete()
+    sql = "DELETE FROM owners WHERE id = #{@id};"
+    SqlRunner.run(sql)
   end
+
+  def update()
+    sql = "UPDATE owners SET (first_name, last_name) = ('#{@first_name}', '#{@last_name}') WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
+  # def find_owner()
+  #   sql = "SELECT * FROM animals WHERE animals.id = '#{@animal_id}';"
+  #   result = SqlRunner.run(sql)
+  #   return result.first()
+  # end
+
 end
 
 #only shows owners name
