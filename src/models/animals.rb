@@ -1,6 +1,6 @@
 require_relative '../db/sql_runner'
 
-class Animals
+class Animal
   attr_accessor :id, :name, :type, :breed, :age, :date_added, :available
   def initialize (options)
     @id = options['id'].to_i if options['id']
@@ -9,11 +9,11 @@ class Animals
     @breed = options['breed']
     @age = options['age'].to_i
     @date_added = options['date_added']
-    @available = options['availablle']
+    @available = options['available']
   end
 
   def save()
-    sql = "INSERT INTO animals (name, type, breed, age, date_added, avaialble) VALUES ('#{@name}', '#{@type}', '#{@breed}', #{@age}, '#{@date_added}', '#{@available}') RETURNING *;"
+    sql = "INSERT INTO animals (name, type, breed, age, date_added, available) VALUES ('#{@name}', '#{@type}', '#{@breed}', #{@age}, '#{@date_added}', '#{@available}') RETURNING *;"
     result = SqlRunner.run(sql)
     @id = result[0]['id'].to_i
   end
@@ -31,7 +31,7 @@ class Animals
   end
 
   def find_available()
-    sql = "SELECT * FROM animals WHERE animals.available = '#{@available}'"
+    sql = "SELECT * FROM animals WHERE animals.available = '#{@available}';"
     result = SqlRunner.run(sql)
     return result.first()
   end

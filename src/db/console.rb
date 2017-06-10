@@ -8,7 +8,7 @@ animal1 = Animal.new({
   'breed' => 'Pomeranian',
   'age' => '3',
   'date_added' => '30/05/2017',
-  'adoptable' => 'false'
+  'available' => 'false'
   })
 animal1.save()
 
@@ -18,7 +18,7 @@ animal2 = Animal.new({
   'breed' => 'Terrapin',
   'age' => '9',
   'date_added' => '22/05/2017',
-  'adoptable' => 'true'
+  'available' => 'true'
   })
 animal2.save()
 
@@ -28,18 +28,23 @@ animal3 = Animal.new({
   'breed' => 'Terrapin',
   'age' => '9',
   'date_added' => '22/05/2017',
-  'adoptable' => 'true'
+  'available' => 'true'
   })
 animal3.save()
 
 owner1 = Owner.new({
   'first_name' => 'Jia',
-  'last_name' => 'Wong'
+  'last_name' => 'Wong',
+  'animal' => animal3
   })
 owner1.save()
 
 owner2 = Owner.new({
   'first_name' => 'Erlich',
-  'last_name' => 'Bachman'
+  'last_name' => 'Bachman',
+  'animal' => animal2
   })
 owner2.save()
+
+binding.pry
+nil
