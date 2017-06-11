@@ -1,31 +1,19 @@
 <h1>Register to become a new owner</h1>
 <form action="/owners" method="POST">
-  <label for="owners">Please enter you name:</label>
-  <input type="text" id="owners" name="name">
+  <label for="first-name">First name:</label>
+  <input type="text" id="first-name" name="first_name">
 
-<!--   <label for="pizza-select">Select a pizza:</label>
-    <select name="topping" id="pizza-select">
-      <option value="Pepperoni">Pepperoni</option>
-      <option value="Hawaiian">Hawaiian</option>
-    </select>
-
-    <label for="quantity">Quantity</label>
-    <input type="number" id="quantity" name="quantity"> -->
+  <label for="last-name">Last name:</label>
+  <input type="text" id="last-name" name="last_name">
 
   <input type="submit" value="Register">
+</form>
+<h1>Existing Owners With Pets</h1>
 
-  <h1>Exsiting Owners With Pets</h1>
+<% for owner in @owners %>
+<p>Name: <%= owner.first_name %> <%= owner.last_name %></p>
+<p><a href="/owner/<%=owner.id%>">Show Owner</a></p>
 
-  <% for owner in @owners %>
-  <p>Name: <%= owner.first_name %> <%= owner.last_name %></p>
-  <% for animal in @animals %>
-  <p>Adopted: <%= animal.name %></p>
-  <p>Type: <%= animal.type %></p>
-  <p>Breed: <%= animal.breed %></p>
-  <p>Age: <%= animal.age %></p>
-  <p>Date added: <%= animal.date_added %></p>
-  <p>Adoptable: <%= animal.available %></p>
+<hr/>
+<% end %>
 
-  <hr/>
-  <% end %>
-  <% end %>

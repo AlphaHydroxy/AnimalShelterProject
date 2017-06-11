@@ -16,7 +16,6 @@ CREATE TABLE owners(
   id SERIAL8 PRIMARY KEY,
   first_name VARCHAR(255),
   last_name VARCHAR(255)
-  -- animal_id INT REFERENCES animals(id)
 );
 
 CREATE TABLE adoptions(

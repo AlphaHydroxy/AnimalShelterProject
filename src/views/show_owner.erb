@@ -1,0 +1,6 @@
+<p>First Name: <%= @owner.first_name %></p>
+<p>Last Name: <%= @owner.last_name %></p>
+<p><a href="/owner/<%= @owner.id %>/edit">Edit</a></p>
+<form action="/owner/<%= @owner.id %>/delete" method="POST">
+  <input type="submit" value="Delete owner">
+</form>

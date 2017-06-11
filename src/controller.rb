@@ -22,5 +22,31 @@ end
 get '/owners' do
   @owners = Owner.all()
   @animals = Animal.all()
+  @adoption = Adoption.all()
   erb(:owners)
 end
+
+get '/owner/:id' do
+  @owner = Owner.find(params[:id])
+  erb(:show_owner)
+end
+
+get '/owner/:id/edit' do
+  @owner = Owner.find(params[:id])
+  erb(:edit_owner)
+end
+
+post '/owner/:id' do
+  @owner = Owner.find(params[:id])
+  @owner.update(params)
+  redirect to "/owner/#{params[:id]}"
+end
+
+
+
+post '/owners' do
+  @owners = Owner.new(params)
+  @owners.save()
+  erb(:registered)
+end
+
