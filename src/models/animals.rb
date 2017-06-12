@@ -1,10 +1,11 @@
 require_relative '../db/sql_runner'
 
 class Animal
-  attr_accessor :id, :name, :type, :breed, :age, :date_added, :available
+  attr_accessor :id, :name, :picture, :type, :breed, :age, :date_added, :available
   def initialize (options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+    @picture = "/picture/#{@name}.png"
     @type = options['type']
     @breed = options['breed']
     @age = options['age'].to_i
@@ -25,7 +26,7 @@ class Animal
   end
 
   def self.find(id)
-    sql = "SELECT * FROM animals WHERE id = #{id};"
+    sql = "SELECT * FROM animals WHERE id = #{@id};"
     animal = SqlRunner.run(sql)
     return Animal.new(animal.first)
   end

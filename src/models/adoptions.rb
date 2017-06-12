@@ -4,12 +4,12 @@ class Adoption
   attr_accessor :id, :owner_id, :animal_id
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @owner = options['owner']
-    @animal = options['animal']
+    @owner_id = options['owner_id']
+    @animal_id = options['animal_id']
   end
 
   def save()
-    sql = "INSERT INTO adoptions (owner_id, animal_id) VALUES ('#{@owner.id}', '#{@animal.id}') RETURNING id;"
+    sql = "INSERT INTO adoptions (owner_id, animal_id) VALUES (#{@owner_id}, #{@animal_id}) RETURNING *;"
     adoption = SqlRunner.run(sql).first
     @id = adoption['id'].to_i
   end
@@ -18,6 +18,12 @@ class Adoption
     sql = "SELECT * FROM adoptions;"
     adoption = SqlRunner.run(sql)
     return adoption.map { |adoption|Adoption.new(adoption) }
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM adoptions WHERE id = #{id};"
+    adoption = SqlRunner.run(sql)
+    return Adoption.new(adoption.first)
   end
 
   def self.delete_all()
@@ -30,8 +36,22 @@ class Adoption
     SqlRunner.run(sql)
   end
 
-  def show_owners_and_pets()
-    sql = "SELECT owners.first_name, animals.name FROM adoptions INNER JOIN owners ON adoptions.owner_id= owners.id INNER JOIN animals ON adoptions.animal_id = animals.id;"
-    SqlRunner.run(sql)
+  def animal
+    sql = "SELECT * FROM animals a 
+    INNER JOIN adoptions ad 
+    ON ad.animal_id = a.id 
+    WHERE a.id = #{@animal_id}"
+    results = SqlRunner.run(sql)
+    return Animal.new(results.first)
   end
+
+  def owner
+    sql = "SELECT * FROM owners o
+    INNER JOIN adoptions ad
+    ON ad.owner_id = o.id
+    WHERE o.id = #{@owner_id}"
+    results = SqlRunner.run(sql)
+    return Owner.new(results.first)
+  end
+
 end

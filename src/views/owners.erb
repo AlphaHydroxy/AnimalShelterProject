@@ -8,7 +8,11 @@
 
   <input type="submit" value="Register">
 </form>
-<h1>Existing Owners With Pets</h1>
+
+<h1>Owners With Pets</h1>
+<li><a href="/adoptions">Adoptions</a></li>
+
+<h1>Existing Owners</h1>
 
 <% for owner in @owners %>
 <p>Name: <%= owner.first_name %> <%= owner.last_name %></p>

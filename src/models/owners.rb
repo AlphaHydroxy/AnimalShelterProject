@@ -38,8 +38,11 @@ class Owner
     SqlRunner.run(sql)
   end
 
-  def update()
-    sql = "UPDATE owners SET (first_name, last_name) = ('#{@first_name}', '#{@last_name}') WHERE id = #{@id};"
+  def update(options)
+    sql = "UPDATE owners SET 
+    first_name = '#{options['first_name']}',
+    last_name = '#{options['last_name']}'
+    WHERE id = '#{options['id']}';"
     SqlRunner.run(sql)
   end
 

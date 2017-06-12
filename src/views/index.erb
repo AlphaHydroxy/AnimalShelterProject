@@ -1,7 +1,8 @@
 <h1>Animal Shelter</h1>
 
 <% for animal in @animals %>
-<p>Animal: <%= animal.name %></p>
+<img src="<%=animal.picture%>"/>
+<p>Animal name: <%= animal.name %></p>
 <p>Type: <%= animal.type %></p>
 <p>Breed: <%= animal.breed %></p>
 <p>Age: <%= animal.age %></p>

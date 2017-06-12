@@ -50,16 +50,17 @@ owner2 = Owner.new({
 owner2.save()
 
 adoption1 = Adoption.new({
-  'owner' => owner1,
-  'animal' => animal2
+  'owner_id' => owner1.id,
+  'animal_id' => animal2.id
   })
+
 adoption1.save()
 
 adoption2 = Adoption.new({
-  'owner' => owner2,
-  'animal' => animal3
+  'owner_id' => owner2.id,
+  'animal_id' => animal3.id
   })
 adoption2.save()
 
-binding.pry
-nil
+# binding.pry
+# nil

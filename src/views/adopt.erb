@@ -1,0 +1,17 @@
+<form action="/adopt/new" method="POST">
+  <label for="owners">Choose owner:</label>
+  <select name="owner_id" id="owners">
+  <% for owner in @owners %>
+    <option value="<%= owner.id %>"><%= owner.first_name %> <%= owner.last_name %></option>
+    <% end %>
+  </select>
+
+  <label for="animal">Animal:</label>
+  <select name="animal_id" id="animal">
+  <% for animal in @animals %>
+    <option value="<%= animal.id %>"><%= animal.name %> <%= animal.type %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Adopt">
+</form>

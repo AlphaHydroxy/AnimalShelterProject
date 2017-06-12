@@ -1,0 +1,7 @@
+<h1>Adoptions</h1>
+
+<% for adoption in @adoptions %>
+  <p>Name: <%= adoption.owner.first_name %></p>
+  <p>Adopted Pet: <%= adoption.animal.name %></p>
+<hr/>
+<% end %>

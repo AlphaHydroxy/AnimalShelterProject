@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS owners;
 
 CREATE TABLE animals(
   id SERIAL8 PRIMARY KEY,
+  picture VARCHAR(255),
   name VARCHAR(255),
   type VARCHAR(255),
   breed VARCHAR(255),
