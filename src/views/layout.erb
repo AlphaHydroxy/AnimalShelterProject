@@ -2,21 +2,36 @@
 <html>
   <head>
     <meta charset="UTF-8">
-<!--     <link rel="shortcut icon" type="image/png" href="/wiz-hat.png">
- -->    <link rel="stylesheet" href="/stylesheet.css" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="/pawprint.png">
+    <link rel="stylesheet" href="/stylesheet.css" type="text/css">
     <title>Animal Shelter</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/animals">Animals</a></li>
-        <li><a href="/adopt">Adopt</a></li>
-        <li><a href="/owners">Owners</a></li>
-        <li><a href="/contact">Contact Us</a></li>
-      </ul>
-    </nav>
-
+    <section class="mainbackground">
+      <div>
+        <a href="/home">
+          <img class="logo" src="/pawprint.png" alt="PawPrintLogo" style="width:5%; height:5%;">
+        </a>
+      </div>
+    </section>
+    <section class="navbar">
+      <nav class="nav-flex-container">
+        <ul id="dropdown">
+          <a href="/home"><li>Home</li></a>
+          <a href="/animals"><li>Animals</li></a>
+          <a href="/adopt"><li>Adopt</li></a>
+          <a href="/owners"><li>Owners</li></a>
+          <a href="/contact"><li>Contact</li></a>
+        </ul>
+      </nav>
+      <div class="handle">
+        <div id="icon">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </section>
     <%= yield %>
 
   </body>

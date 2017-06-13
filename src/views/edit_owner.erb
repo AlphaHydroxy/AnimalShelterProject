@@ -1,8 +1,18 @@
-<form action="/owner/<%=@owner.id%>" method="POST">
-  <label for="first-name">First name:</label>
-  <input type="text" id="first-name" name="first_name" value="<%=@owner.first_name%>">
+<section class="page-content">
+  <div class="body-container">
+    <h1 class="page-title">Edit Details</h1>
+    <form action="/owner/<%=@owner.id%>" method="POST">
+      <label for="first-name">First name:</label>
+      <input type="text" id="first-name" name="first_name" value="<%=@owner.first_name%>">
 
-  <label for="last-name">Last name:</label>
-  <input type="text" id="last-name" name="last_name" value="<%= @owner.last_name %>">
-  <input type="submit" value="Edit Details">
-</form>
+      <label for="last-name">Last name:</label>
+      <input type="text" id="last-name" name="last_name" value="<%= @owner.last_name %>">
+      <input type="submit" value="Edit Details">
+    </form>
+  </div>
+</section>
+<footer>
+  <a href="#"><img class="socialmedia" src="facebook.png" alt="facebook" style="height:40px; width:40px;"/></a>
+  <a href="#"><img class="socialmedia" src="twitter.png" alt="twitter" style="height:40px; width:40px;"/></a>
+  <a href="#"><img class="socialmedia" src="instagram.png" alt="instagram" style="height:40px; width:40px;"/></a>
+</footer>

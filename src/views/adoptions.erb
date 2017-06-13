@@ -1,7 +1,15 @@
-<h1>Adoptions</h1>
-
-<% for adoption in @adoptions %>
-  <p>Name: <%= adoption.owner.first_name %></p>
-  <p>Adopted Pet: <%= adoption.animal.name %></p>
-<hr/>
-<% end %>
+<section class="page-content">
+  <div class="body-container">
+    <h1 class="page-title">Adoptions</h1>
+    <% for adoption in @adoptions %>
+      <p>Name: <%= adoption.owner.first_name %></p>
+      <p>Adopted Pet: <%= adoption.animal.name %></p>
+    <hr/>
+    <% end %>
+  </div>
+</section>
+<footer>
+  <a href="#"><img class="socialmedia" src="facebook.png" alt="facebook" style="height:40px; width:40px;"/></a>
+  <a href="#"><img class="socialmedia" src="twitter.png" alt="twitter" style="height:40px; width:40px;"/></a>
+  <a href="#"><img class="socialmedia" src="instagram.png" alt="instagram" style="height:40px; width:40px;"/></a>
+</footer>

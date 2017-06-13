@@ -1,17 +1,27 @@
-<form action="/adopt/new" method="POST">
-  <label for="owners">Choose owner:</label>
-  <select name="owner_id" id="owners">
-  <% for owner in @owners %>
-    <option value="<%= owner.id %>"><%= owner.first_name %> <%= owner.last_name %></option>
-    <% end %>
-  </select>
+<section class="page-content">
+  <div class="body-container">
+    <h1 class="page-title">Adopt A Pet</h1>
+    <form action="/adopt/new" method="POST">
+     <label for="owners">Choose owner:</label>
+     <select name="owner_id" id="owners">
+       <% for owner in @owners %>
+       <option value="<%= owner.id %>"><%= owner.first_name %> <%= owner.last_name %></option>
+       <% end %>
+     </select>
 
-  <label for="animal">Animal:</label>
-  <select name="animal_id" id="animal">
-  <% for animal in @animals %>
-    <option value="<%= animal.id %>"><%= animal.name %> <%= animal.type %></option>
-    <% end %>
-  </select>
+     <label for="animal">Animal:</label>
+     <select name="animal_id" id="animal">
+       <% for animal in @animals %>
+       <option value="<%= animal.id %>"><%= animal.name %> <%= animal.type %></option>
+       <% end %>
+     </select>
 
-  <input type="submit" value="Adopt">
-</form>
+     <input type="submit" value="Adopt">
+   </form>
+ </div>
+</section>
+<footer>
+  <a href="#"><img class="socialmedia" src="facebook.png" alt="facebook" style="height:40px; width:40px;"/></a>
+  <a href="#"><img class="socialmedia" src="twitter.png" alt="twitter" style="height:40px; width:40px;"/></a>
+  <a href="#"><img class="socialmedia" src="instagram.png" alt="instagram" style="height:40px; width:40px;"/></a>
+</footer>

@@ -37,6 +37,46 @@ animal3 = Animal.new({
   })
 animal3.save()
 
+animal4 = Animal.new({
+  'name' => 'Chase',
+  'type' => 'Dog',
+  'breed' => 'Jack Russell',
+  'age' => '5',
+  'date_added' => '12/06/2017',
+  'available' => 'true'
+  })
+animal4.save()
+
+animal5 = Animal.new({
+  'name' => 'Diego',
+  'type' => 'Dog',
+  'breed' => 'Jack Russell x Pug',
+  'age' => '2',
+  'date_added' => '02/06/2017',
+  'available' => 'true'
+  })
+animal5.save()
+
+animal6 = Animal.new({
+  'name' => 'Freya',
+  'type' => 'Dog',
+  'breed' => 'German Shepherd',
+  'age' => '8',
+  'date_added' => '08/06/2017',
+  'available' => 'true'
+  })
+animal6.save()
+
+animal7 = Animal.new({
+  'name' => 'Minnie',
+  'type' => 'Dog',
+  'breed' => 'Pomeranian',
+  'age' => '4',
+  'date_added' => '09/06/2017',
+  'available' => 'true'
+  })
+animal7.save()
+
 owner1 = Owner.new({
   'first_name' => 'Jia',
   'last_name' => 'Wong',
