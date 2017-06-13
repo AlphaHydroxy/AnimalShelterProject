@@ -16,6 +16,11 @@ get '/animals' do
   erb(:index)
 end
 
+get '/animals/ready' do
+  @animals = Animal.find_available_pets_for_adoption
+  erb(:ready)
+end
+
 get '/adopt' do
   @animals = Animal.all()
   @owners = Owner.all()
@@ -48,7 +53,6 @@ get '/adoptions' do
   @animal = Animal.all
   @owner = Owner.all
   @adoptions = Adoption.all
-  # @change_boolean = 
   erb(:adoptions)
 end
 

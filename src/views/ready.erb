@@ -2,11 +2,12 @@
   <div class="body-container">
     <h1 class="page-title">Animals</h1>
     <div class="animal-list">
-      <p><a href="#">Ready for Adoption</a></p>
+      <p><a href="/animals/ready">Ready for Adoption</a></p>
       <p><a href="#">Not Ready for Adoption</a></p>
       <p><a href="/animals">All</a></p>
     </div>
     <% for animal in @animals %>
+    <% if animal.animals_that_are_ready %>
     <img class="animal-pictures" src="<%=animal.picture%>"/>
     <p>Animal name: <%= animal.name %></p>
     <p>Type: <%= animal.type %></p>
@@ -14,10 +15,9 @@
     <p>Age: <%= animal.age %></p>
     <p>Date added: <%= animal.date_added %></p>
     <p>Adoptable: <%= animal.available %></p>
-
     <hr/>
     <% end %>
-
+    <% end %>
   </div>
 </section>
 <footer>

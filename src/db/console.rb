@@ -87,14 +87,7 @@ adoption1 = Adoption.new({
   'owner_id' => owner1.id,
   'animal_id' => animal2.id
   })
-
 adoption1.save()
-
-adoption2 = Adoption.new({
-  'owner_id' => owner2.id,
-  'animal_id' => animal3.id
-  })
-adoption2.save()
 
 # binding.pry
 # nil

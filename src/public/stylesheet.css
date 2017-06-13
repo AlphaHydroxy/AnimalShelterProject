@@ -30,9 +30,10 @@ html, body{
 }
 
 .navbar{
-  background-color: #b3e0ff;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  background: -webkit-linear-gradient(right, white, #b3e0ff);
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  box-shadow: 10px 10px 10px grey;
 }
 
 .nav-flex-container{
@@ -58,20 +59,21 @@ html, body{
   padding: 17.5px;
   text-decoration: none;
   text-align: center;
-  -webkit-transition: background-color .5 linear;
-  transition: .5s;
+  -webkit-transition: background-color .5s linear ;
+  transition: .8s;
 }
 
 .nav-flex-container ul a:hover{
-  box-shadow: 10px 15px 10px grey;
+  box-shadow: 10px 15px 20px grey;
   background: #4db8ff;
   -webkit-transition: background.5s linear;
-  transition: .5s;
+  transition: .8s;
 }
 
 .page-content{
   width: 100%;
   display: flex;
+  background: -webkit-linear-gradient(right, white, #b3e0ff);
 }
 
 .body-container{
@@ -91,7 +93,6 @@ html, body{
 .adoptionclass{
   text-align: center;
   list-style: none;
-  border: 1px dotted black;
 }
 
 form{
@@ -102,6 +103,9 @@ form{
 
 input{
   margin: 0 auto;
+  border-radius: 20px;
+  padding: 10px;
+  outline: none;
 }
 
 p{
@@ -109,10 +113,23 @@ p{
   text-align: center;
 }
 
+.animal-list{
+  display: flex;
+  justify-content: space-around;
+}
+
+.animal-list p a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.animal-list p a:hover{
+  text-decoration: underline;
+}
+
 .animal-pictures{
   display: block;
   margin: 40px auto;
-
   height: 30%;
   width: 50%;
   border-radius: 20px;
@@ -123,6 +140,7 @@ footer{
   margin: 0 auto;
   text-align: center;
   padding: 5%;
+  background: -webkit-linear-gradient(right, white, #b3e0ff);
 }
 
 #icon{

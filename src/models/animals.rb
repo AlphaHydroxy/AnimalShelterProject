@@ -46,25 +46,27 @@ class Animal
     SqlRunner.run(sql)
   end
 
-
-
-
-  def when_animal_is_assigned_change_available_to_f()
-    sql = "UPDATE animals SET (name, type, breed, age, date_added, available) = ('#{@name}', '#{@type}', '#{@breed}', #{@age}, '#{@date_added}', '#{f}') WHERE adoptions.animal_id = #{@id};"
-    SqlRunner.run(sql)
-  end
-
-
-
+  # def when_animal_is_assigned_change_available_to_f()
+  #   sql = "UPDATE animals SET (name, type, breed, age, date_added, available) = ('#{@name}', '#{@type}', '#{@breed}', #{@age}, '#{@date_added}', '#{f}') WHERE adoptions.animal_id = #{@id};"
+  #   SqlRunner.run(sql)
+  # end
 
   def find_available_pets_for_adoption()
     sql = "SELECT * FROM animals WHERE animals.available = '#{@available}';"
     result = SqlRunner.run(sql)
     return result.first()
-end
+  end
 
   def is_available() 
     return @available == 't'
+  end
+
+  def animals_that_are_ready()
+    for animal in @animals
+      if animal.available == ('t')
+        return animal
+      end
+    end
   end
 
 end
