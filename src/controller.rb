@@ -28,7 +28,6 @@ post '/adopt' do
   erb(:adopt)
 end 
 
-
 get '/owners' do
   @owners = Owner.all()
   @animals = Animal.all()
@@ -49,6 +48,7 @@ get '/adoptions' do
   @animal = Animal.all
   @owner = Owner.all
   @adoptions = Adoption.all
+  # @change_boolean = 
   erb(:adoptions)
 end
 
@@ -85,6 +85,3 @@ post '/owners' do
   @owners.save()
   erb(:registered)
 end
-
-
-

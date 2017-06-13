@@ -12,6 +12,7 @@ class Adoption
     sql = "INSERT INTO adoptions (owner_id, animal_id) VALUES (#{@owner_id}, #{@animal_id}) RETURNING *;"
     adoption = SqlRunner.run(sql).first
     @id = adoption['id'].to_i
+    pet_adopted(adoption['animal_id'])
   end
 
   def self.all()
@@ -52,6 +53,12 @@ class Adoption
     WHERE o.id = #{@owner_id}"
     results = SqlRunner.run(sql)
     return Owner.new(results.first)
+  end
+
+  def pet_adopted(animal_id)
+    sql = "UPDATE animals SET available = 'f' WHERE id = #{animal_id};"
+    SqlRunner.run(sql)
+
   end
 
 end

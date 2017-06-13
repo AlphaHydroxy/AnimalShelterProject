@@ -83,12 +83,6 @@ owner1 = Owner.new({
   })
 owner1.save()
 
-owner2 = Owner.new({
-  'first_name' => 'Erlich',
-  'last_name' => 'Bachman',
-  })
-owner2.save()
-
 adoption1 = Adoption.new({
   'owner_id' => owner1.id,
   'animal_id' => animal2.id
