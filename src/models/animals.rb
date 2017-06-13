@@ -46,9 +46,28 @@ class Animal
     SqlRunner.run(sql)
   end
 
+  # def when_animal_is_assigned_change_available_to_f()
+  #   sql = 
+  # end
+
   def find_available_pets_for_adoption()
     sql = "SELECT * FROM animals WHERE animals.available = '#{@available}';"
     result = SqlRunner.run(sql)
     return result.first()
   end
+
+  def is_available() 
+    return @available == 't'
+  end
+
+  # def animal_not_assigned()
+  # #if an animal is not assigned to an owner
+  #   #if shows up in the database?
+  #   #adoption id??
+  #   if adoption.id 
+  # #show in the select menu
+  #   return @available
+  # end
+
+
 end

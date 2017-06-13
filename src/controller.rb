@@ -22,6 +22,13 @@ get '/adopt' do
   erb(:adopt)
 end
 
+post '/adopt' do
+  @animal = Animal.find(params[:id])
+  @animal.delete()
+  erb(:adopt)
+end 
+
+
 get '/owners' do
   @owners = Owner.all()
   @animals = Animal.all()

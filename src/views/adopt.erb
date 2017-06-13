@@ -12,7 +12,9 @@
      <label for="animal">Animal:</label>
      <select name="animal_id" id="animal">
        <% for animal in @animals %>
+       <% if animal.is_available %>
        <option value="<%= animal.id %>"><%= animal.name %> <%= animal.type %></option>
+       <% end %>
        <% end %>
      </select>
 
