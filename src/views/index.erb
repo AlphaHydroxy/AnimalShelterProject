@@ -2,7 +2,7 @@
   <div class="body-container">
     <h1 class="page-title">Animals</h1>
     <div class="animal-list">
-      <p><a href="#">Ready for Adoption</a></p>
+      <p><a href="/animals/ready">Ready for Adoption</a></p>
       <p><a href="#">Not Ready for Adoption</a></p>
       <p><a href="/animals">All</a></p>
     </div>
@@ -12,16 +12,10 @@
     <p>Type: <%= animal.type %></p>
     <p>Breed: <%= animal.breed %></p>
     <p>Age: <%= animal.age %></p>
-    <p>Date added: <%= animal.date_added %></p>
+    <p>Date added: <%= animal.date_format %></p>
     <p>Adoptable: <%= animal.available %></p>
-
     <hr/>
     <% end %>
 
   </div>
 </section>
-<footer>
-  <a href="#"><img class="socialmedia" src="facebook.png" alt="facebook" style="height:40px; width:40px;"/></a>
-  <a href="#"><img class="socialmedia" src="twitter.png" alt="twitter" style="height:40px; width:40px;"/></a>
-  <a href="#"><img class="socialmedia" src="instagram.png" alt="instagram" style="height:40px; width:40px;"/></a>
-</footer>

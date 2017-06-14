@@ -6,7 +6,7 @@
 html, body{
   width: 100%;
   height: 100%;
-  font-family: sans-serif;
+  font-family: Sans-serif, Moderne Sans;
 }
 
 .mainbackground{
@@ -21,8 +21,10 @@ html, body{
 .logo{
   display: block;
   margin: 0 auto;
-  padding-top: 15%;
+  padding-top: 10%;
   transition: all .2s ease-in-out;
+  height: 12%;
+  width: 12%;
 }
 
 .logo:hover{
@@ -84,8 +86,7 @@ html, body{
 
 .page-title{
   padding: 10%;
-  font-style: italic;
-  font-family: "script", Brush Script MT;
+  font-family: script, Brush Script MT;
   font-size: 42px;
   text-align: center;
 }
@@ -95,14 +96,26 @@ html, body{
   list-style: none;
 }
 
+.adoptionclass a{
+  text-decoration: none;
+}
+
+.adoptionclass a:hover{
+  text-decoration: underline;
+}
+
+input[type=submit]:hover{
+  color: green;
+}
+
+
 form{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
 input{
-  margin: 0 auto;
   border-radius: 20px;
   padding: 10px;
   outline: none;
@@ -111,20 +124,6 @@ input{
 p{
   line-height: 200%;
   text-align: center;
-}
-
-.animal-list{
-  display: flex;
-  justify-content: space-around;
-}
-
-.animal-list p a{
-  text-decoration: none;
-  color: inherit;
-}
-
-.animal-list p a:hover{
-  text-decoration: underline;
 }
 
 .animal-pictures{
@@ -164,20 +163,52 @@ footer{
   display: none;
 }
 
-@media screen and (max-width: 980px){
+@media screen and (max-width: 780px){
   #dropdown{
     max-height: 20em;
     display: block;
-  }
-
-  nav ul li{
-    display: block;
     width: 100%;
     height: 100%;
-    text-align: center;  }
+  }
+
+  .nav-flex-container{
+    width: 100%;
+    height: 100%
+    display: block;
+    margin: 0;
+  }
+
+  .nav-flex-container ul{
+    list-style: none;
+    width: 50%;
+  }
+
+  .nav-flex-container ul li{
+    color: black;
+    width: 100%;
+    height: 10%;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: background-color .5s linear ;
+    transition: .8s;
+  }
+
+  .nav-flex-container ul li:hover{
+    box-shadow: 10px 15px 20px grey;
+    background: #b3e0ff;
+    -webkit-transition: background.5s linear;
+    transition: .8s;
+  }
+
+  .nav-flex-container ul a{
+    padding: 0;
+    text-align: center;
+  }
 
   .hidden{
     display: none;
+    width: 100%;
   }
 
   .handle{

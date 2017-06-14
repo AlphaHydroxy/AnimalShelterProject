@@ -52,7 +52,7 @@ class Animal
   # end
 
   def find_available_pets_for_adoption()
-    sql = "SELECT * FROM animals WHERE animals.available = '#{@available}';"
+    sql = "SELECT * FROM animals WHERE animals.available = 't';"
     result = SqlRunner.run(sql)
     return result.first()
   end
@@ -61,12 +61,14 @@ class Animal
     return @available == 't'
   end
 
-  def animals_that_are_ready()
-    for animal in @animals
-      if animal.available == ('t')
-        return animal
-      end
+  def animals_that_are_ready
+    if animal.available == 't'
+      return animal
     end
+  end
+
+  def date_format
+    return DateTime.parse(@date_added).strftime("%d/%m/%Y")
   end
 
 end

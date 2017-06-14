@@ -7,8 +7,6 @@
       <p><a href="/animals">All</a></p>
     </div>
     <% for animal in @animals %>
-    <% if animal.find_available_pets_for_adoption %>
-
     <img class="animal-pictures" src="<%=animal.picture%>"/>
     <p>Animal name: <%= animal.name %></p>
     <p>Type: <%= animal.type %></p>
@@ -16,8 +14,11 @@
     <p>Age: <%= animal.age %></p>
     <p>Date added: <%= animal.date_added %></p>
     <p>Adoptable: <%= animal.available %></p>
+    <form action="/admin/<%= @animal.id %>/delete" method="POST">
+      <input type="submit" value="Delete animal">
+    </form>
     <hr/>
     <% end %>
-    <% end %>
+
   </div>
 </section>

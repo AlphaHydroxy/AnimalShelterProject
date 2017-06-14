@@ -58,7 +58,6 @@ class Adoption
   def pet_adopted(animal_id)
     sql = "UPDATE animals SET available = 'f' WHERE id = #{animal_id};"
     SqlRunner.run(sql)
-
   end
 
 end

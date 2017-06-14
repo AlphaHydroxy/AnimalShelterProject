@@ -5,7 +5,6 @@ require 'pry-byebug'
 require_relative './models/animals'
 require_relative './models/owners'
 require_relative './models/adoptions'
-require_relative './models/adoptionsRepository'
 
 get '/home' do
   erb(:home)
@@ -17,7 +16,7 @@ get '/animals' do
 end
 
 get '/animals/ready' do
-  @animals = Animal.find_available_pets_for_adoption
+  @animals = Animal.find(params[:id])
   erb(:ready)
 end
 
@@ -89,3 +88,32 @@ post '/owners' do
   @owners.save()
   erb(:registered)
 end
+
+# get '/admin' do
+#   @animals = Animal.all()
+#   erb(:admin)
+# end
+
+# get '/animal/:id/edit' do
+#   @animal = Animal.find(params[:id])
+#   erb(:admin)
+# end
+
+# post '/animal/:id' do
+#   @animal = Animal.find(params[:id])
+#   @animal.update(params)
+#   redirect to "/admin"
+# end
+
+# post '/animal/:id/delete' do
+#   @animal = Animal.find(params[:id])
+#   @animal.delete()
+#   redirect to "/admin"
+# end  
+
+# post '/animal/:id' do
+#   @animal = Animal.new(params)
+#   @animal.save()
+#   redirect to "/admin"
+# end
+
