@@ -12,3 +12,8 @@ They are looking for a management system to keep track of their animals and owne
 - Assign an animal to a new owner
 - List all the owners and their adopted animals
 - CRUD actions for animals/owners
+
+To run:
+- psql -d animal_shelter -f db/animal_shelter.sql
+- ruby db/console.rb
+- ruby controller.rb
